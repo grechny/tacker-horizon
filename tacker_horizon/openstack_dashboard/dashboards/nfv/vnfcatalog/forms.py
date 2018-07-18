@@ -96,8 +96,8 @@ class OnBoardVNF(forms.SelfHandlingForm):
 
     def handle(self, request, data):
         try:
-            toscal = data['tosca']
-            archive = data['archive']
+            toscal = data.get('tosca')
+            archive = data.get('archive')
             vnfd_name = data['name']
             vnfd_description = data['description']
             if toscal:
