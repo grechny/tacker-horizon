@@ -88,7 +88,7 @@ def create_vnf(request, vnf_arg, **params):
 @profiler.trace
 def upload_vnfd(request, vnfd_id, tosca_body=None, **params):
     LOG.debug("create_vnfd(): params=%s", params)
-    tackerclient(request).upload_vnfd(vnfd_id=vnfd_id, body=tosca_body)
+    tackerclient(request).upload_vnfd(vnfd_id=vnfd_id, vnfd_package=tosca_body)
 
 @profiler.trace
 def get_vnfd(request, vnfd_id):
